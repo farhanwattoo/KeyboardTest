@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>タイピングテスト (Typing Test) | WPMと正確性を無料で測定 - KeyboardTest</title>
+  <meta name="description"
+    content="ブラウザで即座にタイピング速度を測定。WPM（単語数/分）、KPM（文字数/分）、正確性をリアルタイムで評価。プロフェッショナルなタイピング練習に最適な無料ツールです。">
+  <link rel="stylesheet" href="styles.css">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="タイピングテスト | リアルタイム速度診断">
+  <meta property="og:description" content="あなたのタイピングスキルを数値化。練習と測定をオンラインで。">
+  <meta property="og:type" content="website">
+
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "SoftwareApplication",
+      "name": "オンラインタイピングテスター",
+      "operatingSystem": "Any",
+      "applicationCategory": "EducationalApplication",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "JPY"
+      },
+      "description": "タイピングの速度と正確性をリアルタイムで測定・記録するためのツールです。"
+    }
+    </script>
+</head>
+
+<body>
+  <header>
+    <a href="index.html" class="brand">
+      <span>KeyboardTest</span>
+    </a>
+    <nav aria-label="メインナビゲーション">
+      <a href="keyboard-test.html">キーボード</a>
+      <a href="mouse-test.html">マウス</a>
+      <a href="mic-test.html">マイク</a>
+      <a href="speaker-test.html">スピーカー</a>
+      <a href="speed-test.html">速度テスト</a>
+      <a href="typing-test.html" class="active">タイピング</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="test-container" id="typing-test-area">
+      <div class="status-bar">
+        <div class="status-item">
+          <span class="label">速度 (WPM):</span>
+          <span class="value" id="wpm-display">0</span>
+        </div>
+        <div class="status-item">
+          <span class="label">正確性:</span>
+          <span class="value" id="accuracy-display">0%</span>
+        </div>
+        <div class="status-item">
+          <span class="label">経過時間:</span>
+          <span class="value" id="timer-display">00:00</span>
+        </div>
+        <div class="status-item" style="margin-left: auto;">
+          <span class="label">状態:</span>
+          <span class="value" id="test-status" style="color: var(--accent);">準備完了</span>
+        </div>
+      </div>
+
+      <div class="typing-display-outer" style="margin: 2rem 0; background: rgba(0,0,0,0.2); border-radius: 1.5rem; padding: 2.5rem; border: 1px solid var(--card-border); position: relative;">
+        <!-- Phrase display -->
+        <div id="target-text" style="font-size: 1.75rem; line-height: 1.6; color: var(--text-muted); min-height: 120px; font-family: 'Lexend', sans-serif; word-wrap: break-word; transition: all 0.2s;">
+          ここに入力する文字列が表示されます。
+        </div>
+        
+        <!-- Input field (Hidden/Overlayed for seamless interaction) -->
+        <input type="text" id="typing-input" autocomplete="off" style="position: absolute; opacity: 0; pointer-events: none;">
+      </div>
+
+      <div style="text-align: center;">
+        <button class="btn btn-primary" id="start-typing" style="font-size: 1.25rem; padding: 1rem 3.2rem;">テストを開始する</button>
+        <p style="margin-top: 1rem; font-size: 0.85rem; color: var(--text-muted);">ボタンを押してタイピングを始めてください。</p>
+      </div>
+
+      <!-- Result Modal -->
+      <div id="result-overlay" style="display: none; position: fixed; top: 0; left: 0; right: 0; bottom: 0; background: rgba(15, 23, 42, 0.95); backdrop-filter: blur(12px); z-index: 2000; align-items: center; justify-content: center; padding: 1rem;">
+        <div class="test-container" style="width: 100%; max-width: 500px; text-align: center; border-color: var(--primary);">
+          <h2 style="color: var(--primary); margin-bottom: 2rem; font-family: 'Lexend', sans-serif;">テスト結果</h2>
+          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; margin-bottom: 2.5rem;">
+            <div class="speed-result-card">
+              <span class="label">単語数 (WPM)</span>
+              <span class="value" id="final-wpm-val">-</span>
+            </div>
+            <div class="speed-result-card">
+              <span class="label">打鍵数 (KPM)</span>
+              <span class="value" id="final-kpm-val">-</span>
+            </div>
+            <div class="speed-result-card">
+              <span class="label">正確性</span>
+              <span class="value" id="final-accuracy-val">-</span>
+            </div>
+            <div class="speed-result-card">
+              <span class="label">ミス数</span>
+              <span class="value" id="final-errors-val">-</span>
+            </div>
+          </div>
+          <button class="btn btn-primary" id="restart-btn" style="width: 100%; font-size: 1.1rem; padding: 1rem;">もう一度挑戦する</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- SEO Content Section -->
+    <article class="seo-section">
+      <div class="seo-content">
+        <h2>タイピング速度を測定して生産性を向上させる</h2>
+        <p>
+          ビジネスやプログラミングにおいて、タイピングは最も基本的なアウトプットスキルです。当サイトの<strong>タイピングテスト</strong>は、あなたの現在地を客観的に数値化し、ブラインドタッチの習得や速度向上を強力にサポートします。
+        </p>
+
+        <h3>WPMとKPMの違いとは？</h3>
+        <p>
+          タイピング界隈では、主に2つの指標が使われます。
+        </p>
+        <ul>
+          <li><strong>WPM (Words Per Minute):</strong> 1分間に入力できる「単語数」の平均。英語のタイピング速度で一般的に使われます。</li>
+          <li><strong>KPM (Keys Per Minute):</strong> 1分間に入力できる「打鍵数（文字数）」の平均。日本語の入力効率の指標として重要です。</li>
+        </ul>
+        
+        <h3>理想的なタイピング速度の目安</h3>
+        <p>
+          一般的に、ビジネスレベルでは30〜40 WPMが標準的とされています。50 WPMを超えると平均以上、80 WPM以上はプロフェッショナル、100 WPMを超えると世界トップレベルの速度と言えるでしょう。
+        </p>
+
+        <div class="faq-grid" style="margin-top: 3rem;">
+          <div class="faq-item">
+            <h4>速度よりも正確性が重要な理由は？</h4>
+            <p>バックスペースで修正する時間は、新規入力を止めるため、実質的な思考の中断に繋がります。正確性を95%以上に保つことが、最も効率的な入力への近道です。</p>
+          </div>
+          <div class="faq-item">
+            <h4>ブラインドタッチを習得するコツは？</h4>
+            <p>絶対に手元を見ないことです。最初は遅くても構いません。画面だけを見て、指の感覚だけでキーを探す練習を繰り返すことで、筋肉が場所を記憶します。</p>
+          </div>
+        </div>
+      </div>
+    </article>
+  </main>
+
+  <footer>
+    <div class="footer-nav">
+      <a href="index.html">ホーム</a>
+      <a href="keyboard-test.html">キーボード</a>
+      <a href="mouse-test.html">マウス</a>
+      <a href="mic-test.html">マイク</a>
+      <a href="speaker-test.html">スピーカー</a>
+      <a href="speed-test.html">スピードテスト</a>
+      <a href="typing-test.html">タイピングテスト</a>
+    </div>
+    <p style="text-align: center; margin-top: 2rem; color: var(--text-muted); font-size: 0.8rem;">&copy; 2026 KeyboardTest 診断スイート. All rights reserved.</p>
+  </footer>
+
+  <script src="typing-script.js"></script>
+</body>
+
+</html>
