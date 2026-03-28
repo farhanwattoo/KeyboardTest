@@ -1,83 +1,86 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ja">
 
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>What is Keyboard Ghosting? | Online Diagnostic Guide</title>
+  <title>キーボードのゴースト現象とは？ | オンライン診断ガイド</title>
+  <link rel="canonical" href="https://xn--nckya1bjc7izjb.com/guides/keyboard-ghosting.html">
   <meta name="description"
-    content="Learn the technical cause of keyboard ghosting, how it affects gaming performance, and how to test your hardware for N-key rollover (NKRO) for free.">
+    content="キーボードのゴースト現象の技術的な原因、ゲームパフォーマンスへの影響、およびNキーロールオーバー（NKRO）の確認方法を無料で学ぶ。">
   <link rel="stylesheet" href="../styles.css">
 </head>
 
 <body>
   <header>
     <a href="../index.html" class="brand">
-      <span>HardwareTest</span>
+      <span>キーボードテスト</span>
     </a>
-    <nav aria-label="Main Navigation">
-      <a href="../keyboard-test.html">Keyboard</a>
-      <a href="../mouse-test.html">Mouse</a>
-      <a href="../mic-test.html">Microphone</a>
-      <a href="../speaker-test.html">Speakers</a>
+    <nav aria-label="メインナビゲーション">
+      <a href="../keyboard-test.html">キーボード</a>
+      <a href="../mouse-test.html">マウス</a>
+      <a href="../mic-test.html">マイク</a>
+      <a href="../speaker-test.html">スピーカー</a>
+      <a href="../typing-test.html">タイピング</a>
     </nav>
   </header>
 
   <main>
     <article class="seo-content" style="padding-top: 2rem;">
-      <h1>What is Keyboard Ghosting? A Technical Deep Dive</h1>
+      <h1>キーボードのゴースト現象とは？（テクニカル解説）</h1>
       <p>
-        In competitive gaming, every millisecond and every input counts. <strong>Keyboard ghosting</strong> is an architectural limitation in many consumer-grade keyboards that causes certain keys to fail when multiple keys are pressed simultaneously.
+        競技性の高いゲームにおいて、ミリ秒単位の反応と正確な入力は不可欠です。<strong>キーボードのゴースト現象</strong>とは、一部の一般向けキーボードに見られるハードウェア上の制限で、複数のキーを同時に押した際に入力が反映されなくなる不具合を指します。
       </p>
 
-      <h2>The Electrical Matrix Problem</h2>
+      <h2>電気回路（マトリックス）の仕組みと限界</h2>
       <p>
-        Most keyboards use a grid-based "matrix" for their electrical circuits. When you press a key, you complete a circuit at a specific X-Y intersection. However, when you press three or more keys (e.g., W, A, and Shift), the current can follow a parallel path, making it impossible for the controller to distinguish which third key was actually pressed.
+        多くのキーボードは、格子状の「マトリックス」と呼ばれる電気回路を使用しています。キーを押すと、特定のX-Y交差点で回路が閉じられます。しかし、3つ以上のキー（例：W、A、Shift）を同時に押すと、電流が並列経路を通り、コントローラーが「3番目にどのキーが押されたか」を正確に判別できなくなることがあります。
       </p>
 
-      <h2>Symptoms of Ghosting</h2>
+      <h2>ゴースト現象の主な症状</h2>
       <ul>
-        <li>A keypress is ignored during intense activity.</li>
-        <li>Your character stops moving when you try to strafe and crouch simultaneously.</li>
-        <li>A "beep" sound from your system indicating an input overflow.</li>
+        <li>激しい入力の最中に、特定のキー入力が無視される。</li>
+        <li>斜め移動しながらジャンプしようとすると、キャラクターが止まってしまう。</li>
+        <li>入力オーバーフローを示す「ピー」というシステム警告音が鳴る。</li>
       </ul>
 
-      <h3>How to Test for Ghosting</h3>
+      <h3>ゴースト現象のテスト方法</h3>
       <p>
-        The easiest way to verify if your hardware is ghost-free is to use our <a href="../keyboard-test.html">online keyboard ghosting test</a>. Simply hold down your primary gaming keys (WASD, Space, Shift, Ctrl) and see if all of them light up on the virtual display.
+        お手持ちのキーボードがゴーストフリーかどうかを確認する最も簡単な方法は、当サイトの <a href="../keyboard-test.html">オンライン・ゴーストテスト</a> を使用することです。普段ゲームで使うキー（WASD、スペース、シフト、Ctrl）を同時に押し続け、仮想ディスプレイ上ですべてが点灯するか確認してください。
       </p>
 
-      <h3>What is N-Key Rollover (NKRO)?</h3>
+      <h3>Nキーロールオーバー（NKRO）とは？</h3>
       <p>
-        High-performance gaming keyboards feature <strong>NKRO</strong>, which means the controller has a dedicated diode for every single key. This prevents "signal crosstalk" and allows you to press as many keys as you want simultaneously with 0% ghosting.
+        高性能なゲーミングキーボードには <strong>NKRO (N-Key Rollover)</strong> 機能が搭載されています。これは、すべてのキーに独立したダイオードが配置されており、信号の混信（信号漏れ）を防ぐ仕組みです。これにより、何個のキーを同時に押しても 0% のゴースト発生率で完璧に入力が反映されます。
       </p>
 
       <section class="faq-grid">
         <div class="faq-item">
-          <h4>Can software fix keyboard ghosting?</h4>
-          <p>No. Ghosting is a physical hardware limitation of the electrical matrix. To fix it, you generally need to upgrade to a mechanical keyboard with NKRO support.</p>
+          <h4>ソフトウェアでゴースト現象を直せますか？</h4>
+          <p>いいえ。ゴースト現象は電気回路の物理的なハードウェア制限です。これを解決するには、通常、NKRO（Nキーロールオーバー）対応のメカニカルキーボードにアップグレードする必要があります。</p>
         </div>
         <div class="faq-item">
-          <h4>Are mechanical keyboards ghost-free?</h4>
-          <p>Not necessarily. While most modern mechanical keyboards support NKRO, some budget models still use a limited matrix. Always check the product specifications for "Anti-Ghosting" or "NKRO."</p>
+          <h4>メカニカルキーボードなら絶対にゴーストは出ませんか？</h4>
+          <p>必ずしもそうではありません。現代のメカニカルキーボードの多くは NKRO に対応していますが、安価なモデルではマトリックスが制限されている場合があります。製品仕様で「アンチゴースト」や「NKRO」の表記を必ず確認してください。</p>
         </div>
       </section>
 
       <div style="margin-top: 4rem; text-align: center;">
-        <a href="../keyboard-test.html" class="btn btn-primary">Try our Ghosting Test Now</a>
+        <a href="../keyboard-test.html" class="btn btn-primary">今すぐゴーストテストを試す</a>
       </div>
     </article>
   </main>
 
   <footer>
     <div class="footer-nav">
-      <a href="../index.html">Home</a>
-      <a href="../keyboard-test.html">Keyboard Test</a>
-      <a href="../mouse-test.html">Mouse Test</a>
-      <a href="../mic-test.html">Mic Test</a>
-      <a href="../speaker-test.html">Speaker Test</a>
+      <a href="../index.html">ホーム</a>
+      <a href="../keyboard-test.html">キーボード</a>
+      <a href="../mouse-test.html">マウス</a>
+      <a href="../mic-test.html">マイク</a>
+      <a href="../speaker-test.html">スピーカー</a>
+      <a href="../typing-test.html">タイピング</a>
     </div>
-    <p style="text-align: center; margin-top: 1rem; color: var(--text-muted); font-size: 0.8rem;">&copy; 2026 HardwareTest Diagnostics.</p>
+    <p style="text-align: center; margin-top: 1rem; color: var(--text-muted); font-size: 0.8rem;">&copy; 2026 キーボードテスト 診断スイート.</p>
   </footer>
 
 </body>
