@@ -1,135 +1,45 @@
 <!DOCTYPE html>
-<html lang="ja">
 
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>マイクテスト | 明瞭度、音量、ノイズのオンライン確認</title>
-  <link rel="canonical" href="https://xn--nckya1bjc7izjb.com/mic-test.html">
-  <meta name="description"
-    content="ブラウザで即座にマイクの明瞭度を確認。音量レベルの可視化とオシロスコープによる信号解析で、ビデオ会議やストリーミング前の音声チェックに最適です。">
-  <link rel="stylesheet" href="styles.css">
+<html lang="ja"><head><meta charset="utf-8"/><meta content="マイク入力・音量レベル・ブラウザ権限・ノイズ傾向を確認できる無料マイク診断ツールです。" name="viewport"/>
+<title>マイクテスト｜無料オンライン診断ツール</title><meta content="マイク入力・音量レベル・ブラウザ権限・ノイズ傾向を確認できる無料マイク診断ツールです。 使い方、判断基準、症状別チェック、FAQを掲載しています。" name="description"/><meta content="index, follow, max-image-preview:large" name="robots"/><link href="https://xn--nckya1bjc7izjb.com/mic-test.html" rel="canonical"/><link href="styles.css" rel="stylesheet"/>
+<meta content="マイク入力・音量レベル・ブラウザ権限・ノイズ傾向を確認できる無料マイク診断ツールです。" property="og:title"/><meta content="ブラウザ権限、入力レベル、ノイズ、録音環境を確認する診断ツールです。" property="og:description"/><meta content="website" property="og:type"/><meta content="https://xn--nckya1bjc7izjb.com/mic-test.html" property="og:url"/><meta content="キーボードテスト" property="og:site_name"/>
+<meta content="summary" name="twitter:card"/><meta content="マイクテスト | キーボードテスト" name="twitter:title"/><meta content="ブラウザ権限、入力レベル、ノイズ、録音環境を確認する診断ツールです。" name="twitter:description"/>
+<script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "Organization", "@id": "https://xn--nckya1bjc7izjb.com/#organization", "name": "キーボードテスト", "url": "https://xn--nckya1bjc7izjb.com/", "logo": "https://xn--nckya1bjc7izjb.com/assets/logo.svg", "contactPoint": {"@type": "ContactPoint", "contactType": "customer support", "email": "support@xn--nckya1bjc7izjb.com"}}, {"@type": "WebSite", "@id": "https://xn--nckya1bjc7izjb.com/#website", "name": "キーボードテスト", "url": "https://xn--nckya1bjc7izjb.com/", "inLanguage": "ja", "publisher": {"@id": "https://xn--nckya1bjc7izjb.com/#organization"}}, {"@type": "Person", "@id": "https://xn--nckya1bjc7izjb.com/authors.html#takumi-sato", "name": "Takumi Sato", "jobTitle": "デバイス診断コンテンツ編集者", "url": "https://xn--nckya1bjc7izjb.com/authors.html", "knowsAbout": ["キーボード診断", "ブラウザベーステスト", "周辺機器トラブルシューティング"]}, {"@type": "WebPage", "@id": "https://xn--nckya1bjc7izjb.com/mic-test.html#webpage", "url": "https://xn--nckya1bjc7izjb.com/mic-test.html", "name": "マイクテスト", "description": "ブラウザ権限、入力レベル、ノイズ、録音環境を確認する診断ツールです。", "isPartOf": {"@id": "https://xn--nckya1bjc7izjb.com/#website"}, "inLanguage": "ja", "dateModified": "2026-06-04", "publisher": {"@id": "https://xn--nckya1bjc7izjb.com/#organization"}, "author": {"@id": "https://xn--nckya1bjc7izjb.com/authors.html#takumi-sato"}}, {"@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "ホーム", "item": "https://xn--nckya1bjc7izjb.com/"}, {"@type": "ListItem", "position": 2, "name": "マイクテスト", "item": "https://xn--nckya1bjc7izjb.com/mic-test.html"}]}, {"@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "このページだけで故障と断定できますか？", "acceptedAnswer": {"@type": "Answer", "text": "断定はできません。複数環境で同じ結果になるかを確認し、必要に応じてメーカー診断や修理窓口へ相談してください。"}}, {"@type": "Question", "name": "結果が毎回違う場合はどうすればよいですか？", "acceptedAnswer": {"@type": "Answer", "text": "通信、電池残量、ブラウザ負荷、バックグラウンドアプリ、接続ポートを順番に確認してください。"}}, {"@type": "Question", "name": "スマートフォンでも使えますか？", "acceptedAnswer": {"@type": "Answer", "text": "一部の診断はスマートフォンでも確認できますが、キーボードやマウスなど外部機器の詳細確認はPC環境の方が正確です。"}}]}]}</script>    <meta name="author" content="Ava Garcia <AvaGarcia@xn--nckya1bjc7izjb.com>">
+</head><body><header>
+<a class="brand" href="index.html"><img alt="キーボードテスト ロゴ" height="32" loading="lazy" src="assets/logo.svg" width="32"/><span>キーボードテスト</span></a>
+<nav aria-label="メインナビゲーション"><a href="keyboard-test.html">キーボード</a><a href="mouse-test.html">マウス</a><a href="mic-test.html">マイク</a><a href="speaker-test.html">スピーカー</a><a href="speed-test.html">速度テスト</a><a href="typing-test.html">タイピング</a><a href="guides/index.html">ガイド</a><a href="about.html">運営情報</a></nav>
+</header><main><nav aria-label="パンくず" class="breadcrumb"><a href="index.html">ホーム</a> / <span>マイクテスト</span></nav><section class="test-container" id="mic-test-area"><div class="tool-intro"><h1>マイクテスト</h1><p>マイク入力・音量レベル・ブラウザ権限・ノイズ傾向を確認できる無料マイク診断ツールです。</p></div>
+<div class="status-bar">
+<div class="status-item">
+<span class="label">現在のボリューム:</span>
+<span class="value" id="input-level">0%</span>
+</div>
+<div class="status-item">
+<span class="label">ステータス:</span>
+<span class="value" id="mic-status" style="color: var(--danger);">未接続</span>
+</div>
+<div class="status-item">
+<span class="label">最大音量:</span>
+<span class="value" id="max-volume">0%</span>
+</div>
+</div>
+<!-- Mic Pulse and Oscilloscope -->
+<div style="display: flex; flex-direction: column; align-items: center; gap: 2rem; padding: 2rem 0;">
+<div id="mic-pulse" style="width: 15rem; height: 15rem; background: var(--card-bg); border-radius: 50%; display: flex; align-items: center; justify-content: center; position: relative; border: 4px solid var(--card-border); transition: all 0.1s; overflow: hidden;">
+<div id="mic-glow" style="position: absolute; width: 100%; height: 100%; border-radius: 50%; box-shadow: 0 0 50px var(--primary-glow); opacity: 0; transition: opacity 0.1s;"></div>
+<span style="font-size: 5rem; z-index: 1;">🎙️</span>
+</div>
+<div style="width: 100%; max-width: 800px; height: 12rem; background: rgba(0,0,0,0.3); border-radius: 1.5rem; overflow: hidden; border: 1px solid var(--card-border);">
+<canvas id="oscilloscope" style="width: 100%; height: 100%;"></canvas>
+</div>
+<div style="display: flex; gap: 1.5rem;">
+<button class="btn btn-primary" id="start-mic" style="font-size: 1.1rem; padding: 1rem 2rem;">テストを開始</button>
+<button class="btn" id="stop-mic" style="background: var(--card-border); color: var(--text-muted);">終了</button>
+</div>
+<p id="mic-error" style="color: var(--danger); font-size: 0.9rem; display: none;">エラー: マイクへのアクセスが拒否されたか、デバイスが見つかりませんでした。</p>
+</div>
+</section>
 
-  <!-- Open Graph -->
-  <meta property="og:title" content="マイクテスト | リアルタイム・音声ハードウェア診断">
-  <meta property="og:description" content="あなたの声はクリアに聞こえていますか？無料のマイク音質チェック。">
-  <meta property="og:type" content="website">
+ SEO Content Section 
 
-  <!-- Structured Data JSON-LD -->
-  <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "SoftwareApplication",
-      "name": "オンラインマイクテスター",
-      "operatingSystem": "Any",
-      "applicationCategory": "HardwareDiagnostics",
-      "offers": {
-        "@type": "Offer",
-        "price": "0",
-        "priceCurrency": "JPY"
-      },
-      "description": "マイクの音量と波形を視覚的に表示して動作確認を行う無料ツールです。"
-    }
-    </script>
-</head>
-
-<body>
-  <header>
-    <a href="index.html" class="brand">
-      <span>キーボードテスト</span>
-    </a>
-    <nav aria-label="メインナビゲーション">
-      <a href="keyboard-test.html">キーボード</a>
-      <a href="mouse-test.html">マウス</a>
-      <a href="mic-test.html" class="active">マイク</a>
-      <a href="speaker-test.html">スピーカー</a>
-      <a href="speed-test.html">速度テスト</a>
-      <a href="typing-test.html">タイピング</a>
-    </nav>
-  </header>
-
-  <main>
-    <section class="test-container" id="mic-test-area">
-      <div class="status-bar">
-        <div class="status-item">
-          <span class="label">現在のボリューム:</span>
-          <span class="value" id="input-level">0%</span>
-        </div>
-        <div class="status-item">
-          <span class="label">ステータス:</span>
-          <span class="value" id="mic-status" style="color: var(--danger);">未接続</span>
-        </div>
-        <div class="status-item">
-          <span class="label">最大音量:</span>
-          <span class="value" id="max-volume">0%</span>
-        </div>
-      </div>
-
-      <!-- Mic Pulse and Oscilloscope -->
-      <div style="display: flex; flex-direction: column; align-items: center; gap: 2rem; padding: 2rem 0;">
-        <div id="mic-pulse" style="width: 15rem; height: 15rem; background: var(--card-bg); border-radius: 50%; display: flex; align-items: center; justify-content: center; position: relative; border: 4px solid var(--card-border); transition: all 0.1s; overflow: hidden;">
-          <div id="mic-glow" style="position: absolute; width: 100%; height: 100%; border-radius: 50%; box-shadow: 0 0 50px var(--primary-glow); opacity: 0; transition: opacity 0.1s;"></div>
-          <span style="font-size: 5rem; z-index: 1;">🎙️</span>
-        </div>
-
-        <div style="width: 100%; max-width: 800px; height: 12rem; background: rgba(0,0,0,0.3); border-radius: 1.5rem; overflow: hidden; border: 1px solid var(--card-border);">
-          <canvas id="oscilloscope" style="width: 100%; height: 100%;"></canvas>
-        </div>
-
-        <div style="display: flex; gap: 1.5rem;">
-          <button class="btn btn-primary" id="start-mic" style="font-size: 1.1rem; padding: 1rem 2rem;">テストを開始</button>
-          <button class="btn" id="stop-mic" style="background: var(--card-border); color: var(--text-muted);">終了</button>
-        </div>
-        <p id="mic-error" style="color: var(--danger); font-size: 0.9rem; display: none;">エラー: マイクへのアクセスが拒否されたか、デバイスが見つかりませんでした。</p>
-      </div>
-    </section>
-
-    <!-- SEO Content Section -->
-    <article class="seo-section">
-      <div class="seo-content">
-        <h2>オンライン・マイク音質チェック: 明瞭度とノイズの診断</h2>
-        <p>
-          ビデオ会議やゲーム実況、ポッドキャスト制作において、クリアな音声は信頼の証です。当サイトの<strong>マイクテスト</strong>は、あなたの声が相手にどう聞こえているかを視覚的に分析します。
-        </p>
-
-        <h3>音声波形の分析機能</h3>
-        <p>
-          オシロスコープ機能により、単なる音量だけでなく「波形」として声を捉えます。波形が上下に張り付いている場合は音量が大きすぎ（クリッピング）、平坦すぎる場合はゲインが低すぎます。
-        </p>
-        
-        <h3>トラブルシューティングガイド</h3>
-        <ul>
-          <li><strong>マイクが認識されない場合:</strong> ブラウザの左上の鍵アイコンをクリックして、マイクのアクセス許可が「オン」になっているか確認してください。</li>
-          <li><strong>音が篭っている（こもっている）:</strong> マイクの前に障壁があるか、物理的な埃が詰まっている可能性があります。PC側のノイズ抑制設定が強すぎて声が削られている場合もあります。</li>
-        </ul>
-
-        <div class="faq-grid">
-          <div class="faq-item">
-            <h4>エコーを防ぐには？</h4>
-            <p>スピーカーからの音がマイクに入るとエコーが発生します。ヘッドセットを使用するか、エコーキャンセル機能を有効にしてください。</p>
-          </div>
-          <div class="faq-item">
-            <h4>ノイズがひどい時は？</h4>
-            <p>充電中のラップトップだとノイズが乗る場合があります。また、マイクのケーブルがノイズを拾いやすいこともあるため、別のUSBポートを試してください。</p>
-          </div>
-        </div>
-      </div>
-    </article>
-  </main>
-
-  <footer>
-    <div class="footer-nav">
-      <a href="index.html">ホーム</a>
-      <a href="keyboard-test.html">キーボード</a>
-      <a href="mouse-test.html">マウス</a>
-      <a href="mic-test.html">マイク</a>
-      <a href="speaker-test.html">スピーカー</a>
-      <a href="typing-test.html">タイピングテスト</a>
-    </div>
-    <p style="text-align: center; margin-top: 1rem; color: var(--text-muted); font-size: 0.8rem;">&copy; 2026 KeyboardTest 診断スイート.</p>
-  </footer>
-
-  <script src="mic-script.js"></script>
-</body>
-
-</html>
+<article class="seo-section verified-depth"><aside class="toc"><strong>目次</strong><ul><li><a href="#mic-overview">マイク診断の目的</a></li><li><a href="#mic-howto">使い方</a></li><li><a href="#mic-judge">判断基準</a></li><li><a href="#mic-cases">症状別チェック</a></li><li><a href="#mic-links">関連ガイド</a></li><li><a href="#mic-faq">FAQ</a></li></ul></aside><section id="mic-overview"><h2>マイク診断の目的</h2><p>マイクテストは、ブラウザがマイク入力を受け取れているか、音量が十分か、ノイズが目立たないかを確認するための診断ページです。オンライン会議、授業、録音、配信、ゲーム通話では、相手に聞こえる声の明瞭さが重要です。自分では問題に気づきにくいため、会議前に入力レベルを確認するとトラブルを防ぎやすくなります。</p><p>音が入らない場合、マイク本体の故障だけでなく、ブラウザ権限、OSの入力デバイス選択、アプリのミュート、ヘッドセット端子、Bluetooth接続、ノイズ抑制機能が原因になることがあります。上部のテストエリアで入力レベルを確認し、状態を切り分けてください。</p></section><section id="mic-howto"><h2>正しい使い方</h2><p>テスト開始ボタンを押すと、ブラウザがマイク使用許可を求める場合があります。許可した後、普段話す距離で声を出し、音量メーターが自然に反応するか確認してください。口元に近すぎると破裂音が入り、遠すぎると声が小さくなります。ヘッドセットではマイクの向きも重要です。</p><p>ノイズを確認するときは、数秒間黙って背景音の反応を見ます。常に高いレベルで反応する場合は、空調、キーボード音、PCファン、机の振動、マイクブースト設定が影響している可能性があります。別の入力デバイスを選べる場合は、内蔵マイクと外部マイクを比較してください。</p></section><section id="mic-judge"><h2>判断基準</h2><p>音量がまったく動かない場合は、ブラウザ権限とOS入力デバイスを最初に確認します。音量が小さい場合は、入力レベル、マイク距離、ケーブル、Bluetoothプロファイルを確認します。音が割れる場合は、入力ゲインが高すぎるか、口元に近すぎる可能性があります。</p><p>会議アプリだけで聞こえない場合は、そのアプリのマイク選択やミュート状態を確認します。ブラウザテストでも会議アプリでも反応しない場合は、OSまたはハードウェア側の問題を疑います。会社や学校の端末では、セキュリティ設定でマイクが制限される場合があります。</p></section><section id="mic-cases"><h2>症状別チェック例</h2><ul><li><strong>音が入らない:</strong> ブラウザ権限、OS入力、ミュート、接続を確認します。</li><li><strong>声が小さい:</strong> 入力音量、距離、マイク向き、ゲインを調整します。</li><li><strong>ノイズが多い:</strong> 空調、ファン、机の振動、ノイズ抑制を見直します。</li><li><strong>音が割れる:</strong> 入力レベルを下げ、口元から少し離します。</li></ul></section><section id="mic-links"><h2>関連ガイド</h2><div class="tool-grid compact"><a class="tool-card" href="guides/mic-noise-check.html"><h3>マイクノイズチェック</h3><p>背景ノイズと入力品質を詳しく確認します。</p></a><a class="tool-card" href="guides/internet-speed-for-video-calls.html"><h3>ビデオ会議向け通信速度</h3><p>音声途切れと回線品質の関係を確認します。</p></a><a class="tool-card" href="guides/device-troubleshooting.html"><h3>デバイストラブルシューティング</h3><p>権限、接続、端末側の問題を順番に確認します。</p></a></div></section><section id="mic-faq"><h2>FAQ</h2><div class="faq-item"><h3>マイク許可を拒否した場合はどうしますか？</h3><p>ブラウザのサイト設定からマイク権限を許可し直し、ページを再読み込みしてください。</p></div><div class="faq-item"><h3>音量が動いても相手に聞こえません。</h3><p>会議アプリ側で別の入力デバイスが選ばれている、またはアプリ側がミュートになっている可能性があります。</p></div></section><section id="mic-extra"><h2>テスト結果を記録するときのポイント</h2><p>マイクの問題は、音が入らない、音が小さい、ノイズが多い、音が割れる、途中で切れるという複数の症状に分かれます。診断時は、使用マイク名、ブラウザ名、OS、会議アプリ名、接続方法を記録してください。内蔵マイクと外部マイクを比較すると、端末側の問題かマイク側の問題かを分けやすくなります。</p><p>Bluetoothヘッドセットでは、通話用プロファイルと高音質再生用プロファイルが切り替わることがあり、音質が急に悪くなる場合があります。USBマイクでは、別ポート、別ケーブル、USBハブを外した状態を比較してください。ノイズ抑制や自動ゲイン調整は便利ですが、声が不自然に小さくなる場合もあります。</p><h2>修理・交換前の最終確認</h2><p>修理や買い替え前に、OS録音アプリ、ブラウザテスト、会議アプリの三つで同じ症状が出るか確認してください。すべてで同じなら本体や接続の可能性が高く、一つのアプリだけなら設定の可能性が高くなります。録音サンプルを短く残しておくと、サポートへ説明するときに役立ちます。</p></section><section id="mic-workflow"><h2>会議前の実用チェック手順</h2><p>会議や録音の前には、最初にブラウザで音量反応を確認し、次に実際に使う会議アプリで同じマイクが選ばれているか確認します。最後に短いテスト録音を行い、声の大きさ、背景ノイズ、息の音、キーボード音がどの程度入るかを聞き直してください。周囲が静かな場所でも、机の振動やPCファンがマイクに近いとノイズとして拾われます。マイクアームやスタンドを使う場合は、口元との距離を一定に保つと安定します。</p><p>リモートワークでは、相手の聞こえ方が環境によって変わるため、自分側の入力が安定していることを先に確認しておくと安心です。ブラウザテストで正常なのに相手に届かない場合は、会議アプリの入力デバイス、ノイズ抑制、ブラウザ版とアプリ版の違い、企業端末の権限制限を順番に見直してください。</p></section><p>この確認を定期的に行うと、突然の故障だけでなく、少しずつ悪化している接続状態や設定ミスにも早く気づけます。結果を一度だけで判断せず、通常利用時、再起動後、別ブラウザ、別ポート、別端末という順番で比べることで、原因の範囲を狭められます。サポートへ相談するときも、再現条件とテスト結果がそろっている方が説明が正確になります。</p></article></main><footer><div class="footer-nav"><a href="index.html">ホーム</a><a href="keyboard-test.html">キーボード</a><a href="mouse-test.html">マウス</a><a href="mic-test.html">マイク</a><a href="speaker-test.html">スピーカー</a><a href="speed-test.html">速度</a><a href="typing-test.html">タイピング</a><a href="guides/index.html">ガイド</a><a href="about.html">About</a><a href="authors.html">Authors</a><a href="editorial-policy.html">Editorial Policy</a><a href="privacy-policy.html">Privacy</a><a href="terms.html">Terms</a><a href="contact.html">Contact</a><a href="sitemap.xml">Sitemap</a></div><p style="text-align:center;margin-top:2rem;color:var(--text-muted);font-size:.85rem;">© 2026 KeyboardTest 診断スイート. All rights reserved.</p></footer><script src="mic-script.js"></script></body></html>

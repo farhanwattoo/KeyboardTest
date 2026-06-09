@@ -1,165 +1,71 @@
 <!DOCTYPE html>
-<html lang="ja">
 
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>タイピングテスト (Typing Test) | WPMと正確性を無料で測定 - KeyboardTest</title>
-  <link rel="canonical" href="https://xn--nckya1bjc7izjb.com/typing-test.html">
-  <meta name="description"
-    content="ブラウザで即座にタイピング速度を測定。WPM（単語数/分）、KPM（文字数/分）、正確性をリアルタイムで評価。プロフェッショナルなタイピング練習に最適な無料ツールです。">
-  <link rel="stylesheet" href="styles.css">
-
-  <!-- Open Graph -->
-  <meta property="og:title" content="タイピングテスト | リアルタイム速度診断">
-  <meta property="og:description" content="あなたのタイピングスキルを数値化。練習と測定をオンラインで。">
-  <meta property="og:type" content="website">
-
-  <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "SoftwareApplication",
-      "name": "オンラインタイピングテスター",
-      "operatingSystem": "Any",
-      "applicationCategory": "EducationalApplication",
-      "offers": {
-        "@type": "Offer",
-        "price": "0",
-        "priceCurrency": "JPY"
-      },
-      "description": "タイピングの速度と正確性をリアルタイムで測定・記録するためのツールです。"
-    }
-    </script>
-</head>
-
-<body>
-  <header>
-    <a href="index.html" class="brand">
-      <span>キーボードテスト</span>
-    </a>
-    <nav aria-label="メインナビゲーション">
-      <a href="keyboard-test.html">キーボード</a>
-      <a href="mouse-test.html">マウス</a>
-      <a href="mic-test.html">マイク</a>
-      <a href="speaker-test.html">スピーカー</a>
-      <a href="speed-test.html">速度テスト</a>
-      <a href="typing-test.html" class="active">タイピング</a>
-    </nav>
-  </header>
-
-  <main>
-    <section class="test-container" id="typing-test-area">
-      <div class="status-bar">
-        <div class="status-item">
-          <span class="label">速度 (WPM):</span>
-          <span class="value" id="wpm-display">0</span>
-        </div>
-        <div class="status-item">
-          <span class="label">正確性:</span>
-          <span class="value" id="accuracy-display">0%</span>
-        </div>
-        <div class="status-item">
-          <span class="label">経過時間:</span>
-          <span class="value" id="timer-display">00:00</span>
-        </div>
-        <div class="status-item" style="margin-left: auto;">
-          <span class="label">状態:</span>
-          <span class="value" id="test-status" style="color: var(--accent);">準備完了</span>
-        </div>
-      </div>
-
-      <div class="typing-display-outer" style="margin: 2rem 0; background: rgba(0,0,0,0.2); border-radius: 1.5rem; padding: 2.5rem; border: 1px solid var(--card-border); position: relative;">
-        <!-- Phrase display -->
-        <div id="target-text" style="font-size: 1.75rem; line-height: 1.6; color: var(--text-muted); min-height: 120px; font-family: 'Lexend', sans-serif; word-wrap: break-word; transition: all 0.2s;">
+<html lang="ja"><head><meta charset="utf-8"/><meta content="入力速度・正確性・ミスタイプ傾向をブラウザで確認できる無料タイピング診断ツールです。" name="viewport"/>
+<title>タイピングテスト｜無料オンライン診断ツール</title><meta content="入力速度・正確性・ミスタイプ傾向をブラウザで確認できる無料タイピング診断ツールです。 使い方、判断基準、症状別チェック、FAQを掲載しています。" name="description"/><meta content="index, follow, max-image-preview:large" name="robots"/><link href="https://xn--nckya1bjc7izjb.com/typing-test.html" rel="canonical"/><link href="styles.css" rel="stylesheet"/>
+<meta content="入力速度・正確性・ミスタイプ傾向をブラウザで確認できる無料タイピング診断ツールです。" property="og:title"/><meta content="入力速度、正確性、ミス傾向、練習結果を確認する診断ツールです。" property="og:description"/><meta content="website" property="og:type"/><meta content="https://xn--nckya1bjc7izjb.com/typing-test.html" property="og:url"/><meta content="キーボードテスト" property="og:site_name"/>
+<meta content="summary" name="twitter:card"/><meta content="タイピングテスト | キーボードテスト" name="twitter:title"/><meta content="入力速度、正確性、ミス傾向、練習結果を確認する診断ツールです。" name="twitter:description"/>
+<script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "Organization", "@id": "https://xn--nckya1bjc7izjb.com/#organization", "name": "キーボードテスト", "url": "https://xn--nckya1bjc7izjb.com/", "logo": "https://xn--nckya1bjc7izjb.com/assets/logo.svg", "contactPoint": {"@type": "ContactPoint", "contactType": "customer support", "email": "support@xn--nckya1bjc7izjb.com"}}, {"@type": "WebSite", "@id": "https://xn--nckya1bjc7izjb.com/#website", "name": "キーボードテスト", "url": "https://xn--nckya1bjc7izjb.com/", "inLanguage": "ja", "publisher": {"@id": "https://xn--nckya1bjc7izjb.com/#organization"}}, {"@type": "Person", "@id": "https://xn--nckya1bjc7izjb.com/authors.html#takumi-sato", "name": "Takumi Sato", "jobTitle": "デバイス診断コンテンツ編集者", "url": "https://xn--nckya1bjc7izjb.com/authors.html", "knowsAbout": ["キーボード診断", "ブラウザベーステスト", "周辺機器トラブルシューティング"]}, {"@type": "WebPage", "@id": "https://xn--nckya1bjc7izjb.com/typing-test.html#webpage", "url": "https://xn--nckya1bjc7izjb.com/typing-test.html", "name": "タイピングテスト", "description": "入力速度、正確性、ミス傾向、練習結果を確認する診断ツールです。", "isPartOf": {"@id": "https://xn--nckya1bjc7izjb.com/#website"}, "inLanguage": "ja", "dateModified": "2026-06-04", "publisher": {"@id": "https://xn--nckya1bjc7izjb.com/#organization"}, "author": {"@id": "https://xn--nckya1bjc7izjb.com/authors.html#takumi-sato"}}, {"@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "ホーム", "item": "https://xn--nckya1bjc7izjb.com/"}, {"@type": "ListItem", "position": 2, "name": "タイピングテスト", "item": "https://xn--nckya1bjc7izjb.com/typing-test.html"}]}, {"@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "このページだけで故障と断定できますか？", "acceptedAnswer": {"@type": "Answer", "text": "断定はできません。複数環境で同じ結果になるかを確認し、必要に応じてメーカー診断や修理窓口へ相談してください。"}}, {"@type": "Question", "name": "結果が毎回違う場合はどうすればよいですか？", "acceptedAnswer": {"@type": "Answer", "text": "通信、電池残量、ブラウザ負荷、バックグラウンドアプリ、接続ポートを順番に確認してください。"}}, {"@type": "Question", "name": "スマートフォンでも使えますか？", "acceptedAnswer": {"@type": "Answer", "text": "一部の診断はスマートフォンでも確認できますが、キーボードやマウスなど外部機器の詳細確認はPC環境の方が正確です。"}}]}]}</script>    <meta name="author" content="Ava Garcia <AvaGarcia@xn--nckya1bjc7izjb.com>">
+</head><body><header>
+<a class="brand" href="index.html"><img alt="キーボードテスト ロゴ" height="32" loading="lazy" src="assets/logo.svg" width="32"/><span>キーボードテスト</span></a>
+<nav aria-label="メインナビゲーション"><a href="keyboard-test.html">キーボード</a><a href="mouse-test.html">マウス</a><a href="mic-test.html">マイク</a><a href="speaker-test.html">スピーカー</a><a href="speed-test.html">速度テスト</a><a href="typing-test.html">タイピング</a><a href="guides/index.html">ガイド</a><a href="about.html">運営情報</a></nav>
+</header><main><nav aria-label="パンくず" class="breadcrumb"><a href="index.html">ホーム</a> / <span>タイピングテスト</span></nav><section class="test-container" id="typing-test-area"><div class="tool-intro"><h1>タイピングテスト</h1><p>入力速度・正確性・ミスタイプ傾向をブラウザで確認できる無料タイピング診断ツールです。</p></div>
+<div class="status-bar">
+<div class="status-item">
+<span class="label">速度 (WPM):</span>
+<span class="value" id="wpm-display">0</span>
+</div>
+<div class="status-item">
+<span class="label">正確性:</span>
+<span class="value" id="accuracy-display">0%</span>
+</div>
+<div class="status-item">
+<span class="label">経過時間:</span>
+<span class="value" id="timer-display">00:00</span>
+</div>
+<div class="status-item" style="margin-left: auto;">
+<span class="label">状態:</span>
+<span class="value" id="test-status" style="color: var(--accent);">準備完了</span>
+</div>
+</div>
+<div class="typing-display-outer" style="margin: 2rem 0; background: rgba(0,0,0,0.2); border-radius: 1.5rem; padding: 2.5rem; border: 1px solid var(--card-border); position: relative;">
+<!-- Phrase display -->
+<div id="target-text" style="font-size: 1.75rem; line-height: 1.6; color: var(--text-muted); min-height: 120px; font-family: 'Lexend', sans-serif; word-wrap: break-word; transition: all 0.2s;">
           ここに入力する文字列が表示されます。
         </div>
-        
-        <!-- Input field (Hidden/Overlayed for seamless interaction) -->
-        <input type="text" id="typing-input" autocomplete="off" style="position: absolute; opacity: 0; pointer-events: none;">
-      </div>
+<!-- Input field (Hidden/Overlayed for seamless interaction) -->
+<input autocomplete="off" id="typing-input" style="position: absolute; opacity: 0; pointer-events: none;" type="text"/>
+</div>
+<div style="text-align: center;">
+<button class="btn btn-primary" id="start-typing" style="font-size: 1.25rem; padding: 1rem 3.2rem;">テストを開始する</button>
+<p style="margin-top: 1rem; font-size: 0.85rem; color: var(--text-muted);">ボタンを押してタイピングを始めてください。</p>
+</div>
+<!-- Result Modal -->
+<div id="result-overlay" style="display: none; position: fixed; top: 0; left: 0; right: 0; bottom: 0; background: rgba(15, 23, 42, 0.95); backdrop-filter: blur(12px); z-index: 2000; align-items: center; justify-content: center; padding: 1rem;">
+<div class="test-container" style="width: 100%; max-width: 500px; text-align: center; border-color: var(--primary);">
+<h2 style="color: var(--primary); margin-bottom: 2rem; font-family: 'Lexend', sans-serif;">テスト結果</h2>
+<div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; margin-bottom: 2.5rem;">
+<div class="speed-result-card">
+<span class="label">単語数 (WPM)</span>
+<span class="value" id="final-wpm-val">-</span>
+</div>
+<div class="speed-result-card">
+<span class="label">打鍵数 (KPM)</span>
+<span class="value" id="final-kpm-val">-</span>
+</div>
+<div class="speed-result-card">
+<span class="label">正確性</span>
+<span class="value" id="final-accuracy-val">-</span>
+</div>
+<div class="speed-result-card">
+<span class="label">ミス数</span>
+<span class="value" id="final-errors-val">-</span>
+</div>
+</div>
+<button class="btn btn-primary" id="restart-btn" style="width: 100%; font-size: 1.1rem; padding: 1rem;">もう一度挑戦する</button>
+</div>
+</div>
+</section>
 
-      <div style="text-align: center;">
-        <button class="btn btn-primary" id="start-typing" style="font-size: 1.25rem; padding: 1rem 3.2rem;">テストを開始する</button>
-        <p style="margin-top: 1rem; font-size: 0.85rem; color: var(--text-muted);">ボタンを押してタイピングを始めてください。</p>
-      </div>
+ SEO Content Section 
 
-      <!-- Result Modal -->
-      <div id="result-overlay" style="display: none; position: fixed; top: 0; left: 0; right: 0; bottom: 0; background: rgba(15, 23, 42, 0.95); backdrop-filter: blur(12px); z-index: 2000; align-items: center; justify-content: center; padding: 1rem;">
-        <div class="test-container" style="width: 100%; max-width: 500px; text-align: center; border-color: var(--primary);">
-          <h2 style="color: var(--primary); margin-bottom: 2rem; font-family: 'Lexend', sans-serif;">テスト結果</h2>
-          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; margin-bottom: 2.5rem;">
-            <div class="speed-result-card">
-              <span class="label">単語数 (WPM)</span>
-              <span class="value" id="final-wpm-val">-</span>
-            </div>
-            <div class="speed-result-card">
-              <span class="label">打鍵数 (KPM)</span>
-              <span class="value" id="final-kpm-val">-</span>
-            </div>
-            <div class="speed-result-card">
-              <span class="label">正確性</span>
-              <span class="value" id="final-accuracy-val">-</span>
-            </div>
-            <div class="speed-result-card">
-              <span class="label">ミス数</span>
-              <span class="value" id="final-errors-val">-</span>
-            </div>
-          </div>
-          <button class="btn btn-primary" id="restart-btn" style="width: 100%; font-size: 1.1rem; padding: 1rem;">もう一度挑戦する</button>
-        </div>
-      </div>
-    </section>
-
-    <!-- SEO Content Section -->
-    <article class="seo-section">
-      <div class="seo-content">
-        <h2>タイピング速度を測定して生産性を向上させる</h2>
-        <p>
-          ビジネスやプログラミングにおいて、タイピングは最も基本的なアウトプットスキルです。当サイトの<strong>タイピングテスト</strong>は、あなたの現在地を客観的に数値化し、ブラインドタッチの習得や速度向上を強力にサポートします。
-        </p>
-
-        <h3>WPMとKPMの違いとは？</h3>
-        <p>
-          タイピング界隈では、主に2つの指標が使われます。
-        </p>
-        <ul>
-          <li><strong>WPM (Words Per Minute):</strong> 1分間に入力できる「単語数」の平均。英語のタイピング速度で一般的に使われます。</li>
-          <li><strong>KPM (Keys Per Minute):</strong> 1分間に入力できる「打鍵数（文字数）」の平均。日本語の入力効率の指標として重要です。</li>
-        </ul>
-        
-        <h3>理想的なタイピング速度の目安</h3>
-        <p>
-          一般的に、ビジネスレベルでは30〜40 WPMが標準的とされています。50 WPMを超えると平均以上、80 WPM以上はプロフェッショナル、100 WPMを超えると世界トップレベルの速度と言えるでしょう。
-        </p>
-
-        <div class="faq-grid" style="margin-top: 3rem;">
-          <div class="faq-item">
-            <h4>速度よりも正確性が重要な理由は？</h4>
-            <p>バックスペースで修正する時間は、新規入力を止めるため、実質的な思考の中断に繋がります。正確性を95%以上に保つことが、最も効率的な入力への近道です。</p>
-          </div>
-          <div class="faq-item">
-            <h4>ブラインドタッチを習得するコツは？</h4>
-            <p>絶対に手元を見ないことです。最初は遅くても構いません。画面だけを見て、指の感覚だけでキーを探す練習を繰り返すことで、筋肉が場所を記憶します。</p>
-          </div>
-        </div>
-      </div>
-    </article>
-  </main>
-
-  <footer>
-    <div class="footer-nav">
-      <a href="index.html">ホーム</a>
-      <a href="keyboard-test.html">キーボード</a>
-      <a href="mouse-test.html">マウス</a>
-      <a href="mic-test.html">マイク</a>
-      <a href="speaker-test.html">スピーカー</a>
-      <a href="speed-test.html">スピードテスト</a>
-      <a href="typing-test.html">タイピングテスト</a>
-    </div>
-    <p style="text-align: center; margin-top: 2rem; color: var(--text-muted); font-size: 0.8rem;">&copy; 2026 KeyboardTest 診断スイート. All rights reserved.</p>
-  </footer>
-
-  <script src="typing-script.js"></script>
-</body>
-
-</html>
+<article class="seo-section verified-depth"><aside class="toc"><strong>目次</strong><ul><li><a href="#typing-overview">タイピング診断の目的</a></li><li><a href="#typing-howto">使い方</a></li><li><a href="#typing-judge">判断基準</a></li><li><a href="#typing-cases">改善例</a></li><li><a href="#typing-links">関連ガイド</a></li><li><a href="#typing-faq">FAQ</a></li></ul></aside><section id="typing-overview"><h2>タイピング診断の目的</h2><p>タイピングテストは、入力速度、正確性、ミスタイプ傾向を確認し、仕事、学習、プログラミング、チャット対応の効率を改善するための診断ページです。速さだけでなく、正確に入力できるか、一定時間集中して打てるか、特定のキーでミスが増えるかを見ることが大切です。</p><p>キーボードの状態確認にも役立ちます。特定文字だけミスが多い場合、練習不足だけでなく、キーの反応、配列設定、IME、指の置き方が影響していることがあります。上部のテストエリアで実際に入力し、速度と正確性を同時に確認してください。</p></section><section id="typing-howto"><h2>正しい使い方</h2><p>開始前に姿勢を整え、普段使うキーボードと入力環境でテストします。最初から最高速度を狙うより、誤入力を減らして安定したリズムで打つ方が実務では役立ちます。テスト後は、WPMだけでなく正確性も確認し、ミスが多いキーや文字の組み合わせを把握します。</p><p>日本語入力では、ローマ字入力、かな入力、変換操作、句読点、記号入力によって速度が変わります。英数字中心のテスト結果と日本語文章作成の体感速度は異なるため、目的に合わせて練習内容を変えることが重要です。</p></section><section id="typing-judge"><h2>判断基準</h2><p>速度が高くても正確性が低い場合、修正時間が増えて総合的な作業効率は下がります。まず正確性を安定させ、その後で速度を上げる練習が効果的です。短文では速いのに長文で落ちる場合は、集中力、姿勢、指の疲れ、画面の読み取り速度が関係します。</p><p>特定キーでミスが多い場合は、ホームポジション、キー配列、キーボードの高さを見直します。ノートPCと外付けキーボードで結果が大きく違う場合は、キーの深さや配列の慣れも影響しています。</p></section><section id="typing-cases"><h2>改善例</h2><ul><li><strong>ミスが多い:</strong> 速度を落として正確性を優先します。</li><li><strong>長文で疲れる:</strong> 姿勢、手首角度、キーボード高さを調整します。</li><li><strong>特定キーが苦手:</strong> そのキーを含む短文で反復練習します。</li><li><strong>変換で詰まる:</strong> IME辞書、予測変換、単語登録を活用します。</li></ul></section><section id="typing-links"><h2>関連ガイド</h2><div class="tool-grid compact"><a class="tool-card" href="guides/typing-accuracy.html"><h3>タイピング正確性</h3><p>速度より先に安定性を高める考え方を説明します。</p></a><a class="tool-card" href="guides/keyboard-ghosting.html"><h3>キーボードのゴースト現象</h3><p>入力抜けが練習ではなく機器由来か確認します。</p></a><a class="tool-card" href="guides/key-chattering.html"><h3>チャタリング診断</h3><p>二重入力が成績に影響していないか確認します。</p></a></div></section><section id="typing-faq"><h2>FAQ</h2><div class="faq-item"><h3>WPMだけ見ればよいですか？</h3><p>いいえ。実務では正確性と修正時間も重要です。速度と正確性をセットで確認してください。</p></div><div class="faq-item"><h3>毎回結果が違うのは普通ですか？</h3><p>普通です。文章の難しさ、集中力、姿勢、キーボードの違いで変動します。複数回の平均で判断してください。</p></div></section><section id="typing-extra"><h2>テスト結果を記録するときのポイント</h2><p>タイピング結果は、その日の疲れ、姿勢、キーボードの種類、文章の難しさによって変わります。一回だけの数値ではなく、三回から五回の平均を見てください。WPMが高くても正確性が低い場合、実務では修正時間が増えます。速度、正確性、疲れやすさ、ミスが多い文字を一緒に記録すると改善しやすくなります。</p><p>日本語入力では、変換操作、記号、数字、英単語、カタカナ語が速度に影響します。ローマ字入力に慣れている人でも、数字や記号で手が止まることがあります。仕事で使う文章に近い練習をすると、実際の作業効率に結びつきます。キーボードの配列変更や高さ調整も、長時間入力の疲労を減らします。</p><h2>改善前後の比較方法</h2><p>練習では、まずミスを減らす期間、次に速度を上げる期間を分けると安定します。同じ文章で測ると成長が見えやすく、違う文章で測ると実力の幅が分かります。指が疲れる場合は、休憩、手首角度、キーボード位置、椅子の高さも確認してください。入力ミスが急に増えた場合は、キーボード本体の反応もキーボードテストで確認すると安心です。</p></section><section id="typing-workflow"><h2>学習・仕事前の実用チェック手順</h2><p>タイピング練習は、毎回同じ条件で行うと成長が分かりやすくなります。椅子の高さ、キーボードの位置、手首の角度、画面との距離を整え、短時間でも集中して打つことが大切です。速く打とうとして誤入力が増える場合は、まず正確性を優先し、慣れてから速度を上げてください。</p><p>仕事で文章を多く書く人は、数字、記号、英単語、日本語変換を含む文章で練習すると実用的です。プログラミングでは括弧、記号、英数字の入力が多く、一般文章とは違う負荷があります。自分の用途に合わせて苦手な入力を見つけ、短い練習を継続する方が効率的です。</p></section><p>この確認を定期的に行うと、突然の故障だけでなく、少しずつ悪化している接続状態や設定ミスにも早く気づけます。結果を一度だけで判断せず、通常利用時、再起動後、別ブラウザ、別ポート、別端末という順番で比べることで、原因の範囲を狭められます。サポートへ相談するときも、再現条件とテスト結果がそろっている方が説明が正確になります。</p><p>短時間の練習でも、毎日同じ条件で測定すれば改善点が見えます。速度が伸びない時期は、苦手なキーや変換操作を分けて確認し、正確に入力できる範囲を少しずつ広げてください。</p></article></main><footer><div class="footer-nav"><a href="index.html">ホーム</a><a href="keyboard-test.html">キーボード</a><a href="mouse-test.html">マウス</a><a href="mic-test.html">マイク</a><a href="speaker-test.html">スピーカー</a><a href="speed-test.html">速度</a><a href="typing-test.html">タイピング</a><a href="guides/index.html">ガイド</a><a href="about.html">About</a><a href="authors.html">Authors</a><a href="editorial-policy.html">Editorial Policy</a><a href="privacy-policy.html">Privacy</a><a href="terms.html">Terms</a><a href="contact.html">Contact</a><a href="sitemap.xml">Sitemap</a></div><p style="text-align:center;margin-top:2rem;color:var(--text-muted);font-size:.85rem;">© 2026 KeyboardTest 診断スイート. All rights reserved.</p></footer><script src="typing-script.js"></script></body></html>
