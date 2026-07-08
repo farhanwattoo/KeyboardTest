@@ -33,7 +33,7 @@ document.addEventListener('DOMContentLoaded', () => {
             analyser.fftSize = 256;
             source.connect(analyser);
 
-            micStatus.textContent = 'CONNECTED';
+            micStatus.textContent = '接続中';
             micStatus.style.color = 'var(--accent)';
             startBtn.disabled = true;
             micError.style.display = 'none';
@@ -50,8 +50,11 @@ document.addEventListener('DOMContentLoaded', () => {
             stream.getTracks().forEach(track => track.stop());
             audioCtx.close();
             cancelAnimationFrame(animationId);
-            
-            micStatus.textContent = 'DISCONNECTED';
+            stream = null;
+            audioCtx = null;
+            analyser = null;
+
+            micStatus.textContent = '未接続';
             micStatus.style.color = 'var(--danger)';
             startBtn.disabled = false;
             inputLevelVal.textContent = '0%';

@@ -15,6 +15,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const finalAccuracy = document.getElementById('final-accuracy-val');
     const finalErrors = document.getElementById('final-errors-val');
 
+    // 半角英数で入力する練習文。ローマ字文は日本語IMEをオフにして入力します。
     const quotes = [
         "The quick brown fox jumps over the lazy dog.",
         "Your time is limited, so don't waste it living someone else's life.",
@@ -25,7 +26,15 @@ document.addEventListener('DOMContentLoaded', () => {
         "Action is the foundational key to all success.",
         "Innovation distinguishes between a leader and a follower.",
         "Success is a journey, not a destination.",
-        "Dream big and dare to fail."
+        "Dream big and dare to fail.",
+        "kyou mo ichinichi ganbarimashou.",
+        "keyboard no choushi wo kakunin shimasu.",
+        "maiasa coffee wo nomimasu.",
+        "nihongo no typing renshuu desu.",
+        "shigoto no mae ni junbi taisou wo suru.",
+        "ame no hi wa ie de hon wo yomu.",
+        "densha ni notte kaisha ni iku.",
+        "atarashii mouse wo kaimashita."
     ];
 
     let currentQuote = "";

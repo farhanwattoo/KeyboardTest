@@ -129,7 +129,7 @@ document.addEventListener('DOMContentLoaded', () => {
         pressedKeysList.clear();
         verifiedKeys.clear();
         lastKeyName.textContent = '-';
-        lastKeyCode.textContent = '0';
+        lastKeyCode.textContent = '-';
         updateStatus();
     });
 

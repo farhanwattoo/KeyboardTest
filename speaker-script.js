@@ -11,6 +11,7 @@ document.addEventListener('DOMContentLoaded', () => {
     let oscillator = null;
     let gainNode = null;
     let panner = null;
+    let resetTimer = null;
 
     const initAudio = () => {
         if (!audioCtx) {
@@ -60,19 +61,20 @@ document.addEventListener('DOMContentLoaded', () => {
             const pan = side === 'left' ? -1 : 1;
             const container = document.getElementById(`spk-${side}`);
             
-            channelVal.textContent = side.toUpperCase();
-            balanceVal.textContent = side.toUpperCase();
-            
+            channelVal.textContent = side === 'left' ? '左 (LEFT)' : '右 (RIGHT)';
+            balanceVal.textContent = side === 'left' ? '左寄せ' : '右寄せ';
+
             playTone(440, pan, 1.5);
-            
+
             // Animation
             container.style.borderColor = 'var(--primary)';
             container.querySelector('.spk-cone').style.transform = 'scale(1.1)';
-            setTimeout(() => {
-                container.style.borderColor = 'var(--card-border)';
-                container.querySelector('.spk-cone').style.transform = 'scale(1)';
-                channelVal.textContent = 'NONE';
-                balanceVal.textContent = 'CENTER';
+            if (resetTimer) clearTimeout(resetTimer);
+            resetTimer = setTimeout(() => {
+                document.querySelectorAll('.spk-cone').forEach(c => { c.style.transform = 'scale(1)'; });
+                document.querySelectorAll('#spk-left, #spk-right').forEach(s => { s.style.borderColor = 'var(--card-border)'; });
+                channelVal.textContent = '未再生';
+                balanceVal.textContent = 'センター';
             }, 1500);
         });
     });
